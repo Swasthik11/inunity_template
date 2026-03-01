@@ -1,0 +1,198 @@
+.cluster {
+  background: var(--light);
+  padding: 110px 56px;
+}
+
+.inner {
+  max-width: 1240px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 80px;
+  align-items: start;
+}
+
+/* Panel */
+.panel {
+  background: #070c18;
+  border-radius: 28px;
+  padding: 44px 36px;
+  position: relative;
+  overflow: hidden;
+  min-height: 520px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+.panelGlow {
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(ellipse at 30% 60%, rgba(79,124,255,0.18), transparent 60%);
+  pointer-events: none;
+}
+.panelLabel {
+  font-family: var(--font-body);
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.2);
+  margin-bottom: 8px;
+  position: relative; z-index: 1;
+}
+
+.layerCard {
+  background: rgba(255,255,255,0.04);
+  border: 1px solid rgba(255,255,255,0.08);
+  border-radius: 18px;
+  padding: 22px 20px;
+  display: flex;
+  gap: 16px;
+  align-items: flex-start;
+  position: relative; z-index: 1;
+  transition: background 0.3s, border-color 0.3s, transform 0.3s var(--ease-out), box-shadow 0.3s;
+}
+.layerCard:hover {
+  background: rgba(79,124,255,0.1);
+  border-color: rgba(79,124,255,0.3);
+  transform: translateX(8px);
+  box-shadow: -4px 0 24px rgba(79,124,255,0.12);
+}
+
+.layerNum {
+  width: 28px; height: 28px;
+  border-radius: 50%;
+  background: var(--accent);
+  color: var(--white);
+  font-family: var(--font-display);
+  font-size: 13px;
+  font-weight: 700;
+  display: flex; align-items: center; justify-content: center;
+  flex-shrink: 0;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+.layerCard:hover .layerNum {
+  transform: scale(1.12);
+  box-shadow: 0 0 16px rgba(79,124,255,0.5);
+}
+
+.layerTitle {
+  font-family: var(--font-display);
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--white);
+  margin-bottom: 6px;
+}
+.layerDesc {
+  font-family: var(--font-body);
+  font-size: 13px;
+  color: rgba(255,255,255,0.38);
+  line-height: 1.65;
+}
+
+.adoptBtn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-family: var(--font-body);
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--white);
+  background: var(--accent);
+  padding: 12px 24px;
+  border-radius: 100px;
+  text-decoration: none;
+  width: fit-content;
+  margin-top: 8px;
+  position: relative; z-index: 1;
+  transition: background 0.28s, transform 0.28s, box-shadow 0.28s;
+}
+.adoptBtn:hover {
+  background: #3d6be0;
+  transform: translateY(-3px);
+  box-shadow: 0 12px 32px rgba(79,124,255,0.35);
+}
+.adoptBtn span { transition: transform 0.25s; }
+.adoptBtn:hover span { transform: translateX(4px); }
+
+/* Text side */
+.text { padding-top: 12px; }
+.label {
+  display: inline-flex;
+  font-family: var(--font-body);
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 2.5px;
+  text-transform: uppercase;
+  color: #8892aa;
+  background: rgba(0,0,0,0.05);
+  border: 1px solid rgba(0,0,0,0.08);
+  padding: 7px 14px;
+  border-radius: 100px;
+  margin-bottom: 24px;
+}
+
+.heading {
+  font-family: var(--font-display);
+  font-size: clamp(28px, 3.2vw, 46px);
+  font-weight: 800;
+  line-height: 1.12;
+  letter-spacing: -1.5px;
+  color: #0a0e1a;
+  margin-bottom: 18px;
+}
+.body {
+  font-family: var(--font-body);
+  font-size: 15.5px;
+  color: #4a5568;
+  line-height: 1.8;
+  margin-bottom: 32px;
+}
+
+/* Table */
+.table {
+  border: 1px solid rgba(0,0,0,0.08);
+  border-radius: 18px;
+  overflow: hidden;
+  box-shadow: 0 2px 20px rgba(0,0,0,0.05);
+}
+.tableRow {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  border-bottom: 1px solid rgba(0,0,0,0.06);
+  transition: background 0.2s;
+}
+.tableRow:last-child { border-bottom: none; }
+.tableRow:not(.tableHeader):hover { background: rgba(79,124,255,0.04); }
+.tableHeader {
+  background: #f0f2f8;
+  font-family: var(--font-body);
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  color: #8892aa;
+}
+.tableHeader span { padding: 12px 18px; }
+
+.rowType {
+  padding: 15px 18px;
+  font-family: var(--font-body);
+  font-size: 14px;
+  font-weight: 600;
+  color: #0a0e1a;
+  background: #f8f9fc;
+  border-right: 1px solid rgba(0,0,0,0.05);
+}
+.rowBenefit {
+  padding: 15px 18px;
+  font-family: var(--font-body);
+  font-size: 14px;
+  color: #4a5568;
+  background: var(--white);
+}
+
+@media (max-width: 1024px) {
+  .cluster { padding: 80px 24px; }
+  .inner { grid-template-columns: 1fr; gap: 48px; }
+}
