@@ -1,20 +1,4 @@
-.dot {
-  position: fixed;
-  width: 6px;
-  height: 6px;
-  background: #fff;
-  border-radius: 50%;
-  pointer-events: none;
-  z-index: 9999;
-  transform: translate(-50%, -50%);
-  transition:
-    width 0.3s cubic-bezier(0.23,1,0.32,1),
-    height 0.3s cubic-bezier(0.23,1,0.32,1),
-    background 0.3s,
-    border 0.3s,
-    opacity 0.3s;
-  mix-blend-mode: difference;
-}
+
 
 .hover {
   width: 38px;
